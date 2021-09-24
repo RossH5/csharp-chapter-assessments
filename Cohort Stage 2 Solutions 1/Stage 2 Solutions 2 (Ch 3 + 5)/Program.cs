@@ -124,7 +124,25 @@ namespace Stage_2_Solutions_2__Ch_3___5_
             //
             //8.
             //
-
+            //Console.WriteLine("Input a number for a variable: 0 for Integer, 1 for Double, 2 for String");
+            //int userInput = int.Parse(Console.ReadLine());
+            //switch (userInput)
+            //{
+            //    case 0:
+            //        Console.WriteLine(++userInput);
+            //        break;
+            //    case 1:
+            //        double doubleInput = userInput;
+            //        Console.WriteLine(++doubleInput);
+            //        break;
+            //    case 2:
+            //        string strInput = userInput.ToString();
+            //        Console.WriteLine(strInput + "*");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Not a valid input");
+            //        break;
+            //}
 
 
 
