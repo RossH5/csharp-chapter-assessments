@@ -45,7 +45,7 @@ namespace Stage_2_Solutions_2__Ch_3___5_
             //Chapter 5
             //
             //2.
-            //
+
             //Console.WriteLine("Input 3 Numbers");
             //bool successOne = int.TryParse(Console.ReadLine(), out int numOne);
             //bool successTwo = int.TryParse(Console.ReadLine(), out int numTwo);
@@ -80,7 +80,7 @@ namespace Stage_2_Solutions_2__Ch_3___5_
             //{
             //    Console.WriteLine("-");
             //}
-            //
+
             //.5
             //
             //Console.WriteLine("Input a number 1-9:");
@@ -129,15 +129,19 @@ namespace Stage_2_Solutions_2__Ch_3___5_
             //switch (userInput)
             //{
             //    case 0:
-            //        Console.WriteLine(++userInput);
+            //        Console.WriteLine("Enter an Integer");
+            //        int integerInput = int.Parse(Console.ReadLine());
+            //        Console.WriteLine(++integerInput);
             //        break;
             //    case 1:
-            //        double doubleInput = userInput;
-            //        Console.WriteLine(++doubleInput);
+            //        Console.WriteLine("Enter a double");
+            //        double dblInput = double.Parse(Console.ReadLine());
+            //        Console.WriteLine(++dblInput);
             //        break;
             //    case 2:
-            //        string strInput = userInput.ToString();
-            //        Console.WriteLine(strInput + "*");
+            //        Console.WriteLine("Enter a string");
+            //        string stringInput = Console.ReadLine();
+            //        Console.WriteLine(stringInput + "*");
             //        break;
             //    default:
             //        Console.WriteLine("Not a valid input");
