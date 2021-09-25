@@ -1,0 +1,4 @@
+C:\Users\Ross.Henke\source\repos\csharp assessments\Chapter 3, 5\Chapter 3, 5\obj\Debug\net5.0\Chapter 3, 5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ross.Henke\source\repos\csharp assessments\Chapter 3, 5\Chapter 3, 5\obj\Debug\net5.0\Chapter 3, 5.AssemblyInfoInputs.cache
+C:\Users\Ross.Henke\source\repos\csharp assessments\Chapter 3, 5\Chapter 3, 5\obj\Debug\net5.0\Chapter 3, 5.AssemblyInfo.cs
+C:\Users\Ross.Henke\source\repos\csharp assessments\Chapter 3, 5\Chapter 3, 5\obj\Debug\net5.0\Chapter 3, 5.csproj.CoreCompileInputs.cache
