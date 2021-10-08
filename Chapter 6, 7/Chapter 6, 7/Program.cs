@@ -78,7 +78,7 @@ namespace Chapter_6__7
                     }
                 }
             }
-            //10. 
+            //10.
 
             Console.Write("Enter a Number 0-20:");
             int userNum = int.Parse(Console.ReadLine());
@@ -87,67 +87,67 @@ namespace Chapter_6__7
             {
                 for (int numCount = 0; numCount < userNum; numCount++)
                 {
-                    Console.Write(roundCount + numCount + "   ");
+                    Console.Write(roundCount + numCount + "\t");
                 }
                 Console.WriteLine();
             }
 
-            //16.
+            ////16.
 
-            Random rand = new Random();
+            //Random rand = new Random();
 
-            Console.Write("Enter a Number:");
-            int N = int.Parse(Console.ReadLine());
+            //Console.Write("Enter a Number:");
+            //int N = int.Parse(Console.ReadLine());
 
-            int[] numArray = new int[N];
+            //int[] numArray = new int[N];
 
-            for (int i = 0; i < N; i++)
-            {
-                numArray[i] = i + 1;
-            }
-            for (int i = 0; i < numArray.Length; i++)
-            {
-                int randomVal = rand.Next(i, numArray.Length);
-                int temp = numArray[i];
-                numArray[i] = numArray[randomVal];
-                numArray[randomVal] = temp;
-            }
-            for (int i = 0; i < N; i++)
-            {
-                Console.WriteLine(numArray[i]);
-            }
+            //for (int i = 0; i < N; i++)
+            //{
+            //    numArray[i] = i + 1;
+            //}
+            //for (int i = 0; i < numArray.Length; i++)
+            //{
+            //    int randomVal = rand.Next(i, numArray.Length);
+            //    int temp = numArray[i];
+            //    numArray[i] = numArray[randomVal];
+            //    numArray[randomVal] = temp;
+            //}
+            //for (int i = 0; i < N; i++)
+            //{
+            //    Console.WriteLine(numArray[i]);
+            //}
 
-            //##Chapter 7##
+            ////##Chapter 7##
 
-            //10.
+            ////10.
 
-            int[] testArray = { 4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3 };
+            //int[] testArray = { 4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3 };
 
-            Array.Sort(testArray);
-            int longestChain = 0;
-            int currentChain = 0;
-            int freqNum = 0;
+            //Array.Sort(testArray);
+            //int longestChain = 0;
+            //int currentChain = 0;
+            //int freqNum = 0;
 
-            for (int i = 0; i < testArray.Length; i++)
-            {
-                if (i == testArray.Length - 1)
-                {
-                    continue;
-                }
-                else if (testArray[i] == testArray[i + 1])
-                {
-                    currentChain += 1;
-                }
-                else
-                {
-                    currentChain = 0;
-                }
-                if (currentChain > longestChain)
-                {
-                    freqNum = testArray[i];
-                }
-            }
-            Console.WriteLine("Most frequent number is:" + freqNum);
+            //for (int i = 0; i < testArray.Length; i++)
+            //{
+            //    if (i == testArray.Length - 1)
+            //    {
+            //        continue;
+            //    }
+            //    else if (testArray[i] == testArray[i + 1])
+            //    {
+            //        currentChain += 1;
+            //    }
+            //    else
+            //    {
+            //        currentChain = 0;
+            //    }
+            //    if (currentChain > longestChain)
+            //    {
+            //        freqNum = testArray[i];
+            //    }
+            //}
+            //Console.WriteLine("Most frequent number is:" + freqNum);
 
             //14.
 
