@@ -89,7 +89,7 @@ namespace Chapter_9
             int userInput = int.Parse(Console.ReadLine());
             if (userInput == 1)
             {
-                Console.WriteLine("The inputed number in reverse is: {0}",reverseOrder());
+                Console.WriteLine("The inputed number in reverse is: {0}",ReverseIntegerOrder());
             }
             else if (userInput == 2)
             {
@@ -105,7 +105,7 @@ namespace Chapter_9
                 Environment.Exit(1);
             }
         }
-        static int reverseOrder()
+        static int ReverseIntegerOrder()
         {
             Console.Write("Enter a positive integer number: ");
             int inputNumber = int.Parse(Console.ReadLine());
