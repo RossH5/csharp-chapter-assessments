@@ -7,9 +7,9 @@ namespace Chapter_11
         static void Main(string[] args)
         {
             Question4();
-            Question9();
-            Question10();
-            Question11();
+            //Question9();
+            //Question10();
+            //Question11();
         }
         static void Question4()
         {
