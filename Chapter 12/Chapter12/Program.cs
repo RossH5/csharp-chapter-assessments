@@ -24,9 +24,9 @@ namespace Chapter12
     {
         static void Main(string[] args)
         {
-            QuestionSeven();
-            ReadNumber(1, 100);
-            Console.WriteLine(QuestionNine());
+            //QuestionSeven();
+            //ReadNumber(1, 100);
+            //Console.WriteLine(QuestionNine());
             QuestionThirteen();
 
         }
@@ -106,7 +106,7 @@ namespace Chapter12
             {
                 using (WebClient file = new WebClient())
                 {
-                    file.DownloadFile("https://introprogramming.info/wp-content/uploads/2017/08/csharp-book-nakov-en-v2013-cover.jpg", "csharp-book-nakov-en-v2013-cover.jpg");
+                    file.DownloadFile("https://introprogramming.info/wp-content/uploads/2017/08/csharp-book-nakov-en-v2013-cover.jpg", @"C:\Users\Ross.Henke\csharpbooknakov.jpg");
                     Console.WriteLine("Successful Download");
                 }
 
