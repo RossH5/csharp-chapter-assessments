@@ -67,6 +67,7 @@ namespace MeetingApp
             bool userMenu = true;
             bool welcomeMenu = true;
             string fileLocation = "";
+            string fileString = "";
             List<Meeting> listOfMeetings = new List<Meeting>();
 
             do
@@ -92,10 +93,18 @@ namespace MeetingApp
                             case 2:
                                 Console.Write("Where would you like to store the file? ");
                                 fileLocation = Console.ReadLine();
-                                File.Create(fileLocation).Close();  
-                                welcomeMenu = false;
-                                Console.WriteLine("\n");
-                                break;
+                                File.Create(@fileLocation).Close();
+                                if (!File.Exists(@fileLocation))
+                                {
+                                    Console.WriteLine("File Location not valid ");
+                                    break;
+                                }
+                                else
+                                {
+                                    welcomeMenu = false;
+                                    Console.WriteLine("\nNew file Created!\n");
+                                    break;
+                                }
                             case 0:
                                 Environment.Exit(1);
                                 break;
@@ -121,28 +130,7 @@ namespace MeetingApp
                                 listOfMeetings = RemoveMeeting(listOfMeetings);
                                 break;
                             case 3:
-                                DateTime start = new DateTime(DateTime.Today.Year, DateTime.Today.Month,
-                                         DateTime.Today.Day, 08, 00, 00, DateTimeKind.Local);
-                                DateTime end = new DateTime(DateTime.Today.Year, DateTime.Today.Month,
-                                     DateTime.Today.Day, 17, 00, 00, DateTimeKind.Local);
-
-                                while (start != end)
-                                {
-                                    string meetingTitle = " ";
-
-                                    foreach (Meeting meeting in listOfMeetings)
-                                    {
-                                        if ((start >= meeting.StartDateTime) & (start <= meeting.EndDateTime))
-                                        {
-                                            meetingTitle = meeting.Title;
-                                        }
-                                    }
-                                    Console.WriteLine("{0} | {1}", start.ToString("MM/dd/yy HH:mm"), meetingTitle);
-
-                                    start = start.AddMinutes(30);
-                                };
-
-                                Console.WriteLine("\n");
+                                ViewCalendar(listOfMeetings);
                                 break;
                             case 0:
                                 welcomeMenu = true;
@@ -154,7 +142,7 @@ namespace MeetingApp
                         }
                     } while (userMenu);
 
-                    string fileString = "";
+                    fileString = "";
 
                     if (fileLocation != "")
                     {
@@ -241,7 +229,7 @@ namespace MeetingApp
             }
             catch
             {
-                Console.WriteLine("Meeting unable to be added");
+                Console.WriteLine("\nMeeting unable to be added\n");
                 return inputList;
             }
         }
@@ -282,6 +270,28 @@ namespace MeetingApp
                 returnList.Add(newMeeting);
             }
             return returnList;
+        }
+        static void ViewCalendar(List<Meeting> inputList)
+        {
+            DateTime start = DateTime.Today.AddHours(8);
+            DateTime end = DateTime.Today.AddHours(17);
+            while (start != end)
+            {
+                string meetingTitle = " ";
+
+                foreach (Meeting meeting in inputList)
+                {
+                    if ((start >= meeting.StartDateTime) & (start <= meeting.EndDateTime))
+                    {
+                        meetingTitle = meeting.Title;
+                    }
+                }
+                Console.WriteLine("{0} | {1}", start.ToString("MM/dd/yy HH:mm"), meetingTitle);
+
+                start = start.AddMinutes(30);
+            };
+
+            Console.WriteLine("\n");
         }
     }
 }
