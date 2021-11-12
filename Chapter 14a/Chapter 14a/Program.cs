@@ -11,6 +11,12 @@ namespace Chapter_14a
             Student Jill = new Student("Jill Bob", "Rocket Science", "Science", "University of Missouri", "jillbob@email.com", "123-4577");
             StudentTest tester = new StudentTest(Ross, Joe, Jill);
             tester.Printer();
+
+            PhoneTest phonetester = new PhoneTest();
+            Console.WriteLine(phonetester.GivenIphoneDetails_PrintsExpectedString());
+
+            PhoneCallHistoryTest calltester = new PhoneCallHistoryTest();
+            Console.WriteLine(calltester.GivenNewCall_AddsCallToCallHistory());
         }
     }
 }
