@@ -11,6 +11,10 @@ namespace Chapter_14a
         public string Model { get; set; }
         public decimal IdleTime { get; set; }
         public decimal HoursTalk { get; set; }
+        public enum BatteryType
+        {
+            Lilon, NiMH, NiCd
+        }
 
         public Battery(string model, decimal idleTime, decimal hoursTalk)
         {

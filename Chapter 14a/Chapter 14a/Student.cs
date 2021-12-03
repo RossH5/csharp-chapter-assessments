@@ -8,6 +8,7 @@ namespace Chapter_14a
 {
     class Student
     {
+        static int studentCount = 0;
         private string name;
         private string course;
         private string subject;
@@ -17,7 +18,7 @@ namespace Chapter_14a
 
         public Student()
         {
-
+            studentCount++;
         }
 
         public Student(string name, string email, string phone)
@@ -25,6 +26,7 @@ namespace Chapter_14a
             this.Name = name;
             this.Email = email;
             this.Phone = phone;
+            studentCount++;
         }
 
         public Student(string name, string course, string subject, string university, string email, string phone)
@@ -35,6 +37,7 @@ namespace Chapter_14a
             this.Course = course;
             this.Subject = subject;
             this.University = university;
+            studentCount++;
         }
 
 
@@ -76,18 +79,26 @@ namespace Chapter_14a
                "Subject: {2}\n" +
                "University: {3}\n" +
                "Email: {4}\n" +
-               "Phone: {5}", Name, Course, Subject, University, Email, Phone);
+               "Phone: {5}\n" +
+               "Total Student Count: {6}", Name, Course, Subject, University, Email, Phone, studentCount);
         }
     }
     class StudentTest
     {
-        private Student student1;
-        private Student student2;
-        private Student student3;
+        static Student StudentOne;
+        static Student StudentTwo;
+        static Student StudentThree;
 
-        private Student Student1 { get => student1; set => student1 = value; }
-        private Student Student2 { get => student2; set => student2 = value; }
-        private Student Student3 { get => student3; set => student3 = value; }
+        private Student Student1 { get; set; }
+        private Student Student2 { get; set; }
+        private Student Student3 { get; set; }
+
+        static StudentTest()
+        {
+            StudentOne = new Student("Ross Henke", "Marine Biology", "Science", "University of Missouri", "rosshenke@email.com", "8675309");
+            StudentTwo = new Student("Joe Bob", "Calculus", "Math", "University of Missouri", "joebob@email.com", "123-4567");
+            StudentThree = new Student("Jill Bob", "Rocket Science", "Science", "University of Missouri", "jillbob@email.com", "123-4577");
+        }
 
         public StudentTest () 
         { 
@@ -101,9 +112,9 @@ namespace Chapter_14a
         }
         public void Printer()
         {
-            student1.InfoDisplay();
-            student2.InfoDisplay();
-            student3.InfoDisplay();
+            StudentOne.InfoDisplay();
+            StudentTwo.InfoDisplay();
+            StudentThree.InfoDisplay();
         }
     }
 }

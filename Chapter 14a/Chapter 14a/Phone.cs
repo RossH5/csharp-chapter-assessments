@@ -8,6 +8,7 @@ namespace Chapter_14a
 {
     public class Phone
     {
+        private static Phone nokiaN95 = new Phone("N95", "Nokia", 800.00m);
         public string Model { get; set; }
         public string Manufacturer { get; set; }
         public decimal Price { get; set; }
@@ -47,6 +48,10 @@ namespace Chapter_14a
             }
             decimal cost = totalMinutes * costPerMinute;
             return cost;
+        }
+        public static void NokiaPrint()
+        {
+            Console.WriteLine(nokiaN95.ToString());
         }
     }
 
