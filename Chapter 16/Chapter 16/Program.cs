@@ -10,10 +10,10 @@ namespace Chapter_16
 	{
 		static void Main(string[] args)
 		{
-			Question1();
-			Question8();
-			Ch18Question1();
-			Ch18Question2();
+			//Question1();
+			//Question8();
+			//Ch18Question1();
+			//Ch18Question2();
 			Ch18Question3();
 		}
 		static void Question1()
@@ -41,15 +41,7 @@ namespace Chapter_16
 					}
 				}
 			}
-			int sum = 0;
-			foreach (int number in intList)
-			{
-				if (intList.Count == 0)
-				{
-
-				}
-				sum += number;
-			}
+			int sum = intList.Sum();
 			decimal average = (decimal)sum / intList.Count;
 			Console.WriteLine("Sum: {0}\nAverage: {1}", sum, average);
 			Console.WriteLine(intList.Count);
@@ -76,7 +68,7 @@ namespace Chapter_16
 		{
 			int[] intArray = new int[] { 3, 4, 4, 2, 3, 3, 4, 3, 2 };
 			Array.Sort(intArray);
-			int lastNumber = 200003201;
+			int lastNumber = 1000022102;
 			foreach (int number in intArray)
 			{
 				if (number != lastNumber)
@@ -102,39 +94,30 @@ namespace Chapter_16
 			}
 			foreach (int number in returnList)
             {
-                Console.Write("{0} ", number);
+                Console.Write(number);
             }
 		}
 		static void Ch18Question3()
         {
 			try
 			{
-				StreamReader sr = new StreamReader(@"C:\Users\Ross.Henke\source\repos\csharp assessments\Chapter 16\words.txt");
-				string line = sr.ReadLine();
+				string line = File.ReadAllText(@"C:\Users\Ross.Henke\source\repos\csharp assessments\Chapter 16\words.txt");
 				char[] delimiterChar = { ' ', '.', '?', '!', ',', '-'};
 				IDictionary<string, int> returnDictionary = new Dictionary<string, int>();
-				while (line != null)
+				string[] words = line.Split(delimiterChar, StringSplitOptions.RemoveEmptyEntries);
+				Console.WriteLine(line);
+				foreach (string word in words)
 				{
-					string[] words = line.Split(delimiterChar);
-                    Console.WriteLine(words);
-					foreach(string word in words)
-                    {
-                        Console.WriteLine("Word is {0}", word);
-						if (returnDictionary.ContainsKey(word.ToLower()))
-                        {
-							returnDictionary[word.ToLower()]++;
-                        }
-                        else
-                        {
-							returnDictionary[word.ToLower()] = 1;
-                        }
-                    }
-
-					Console.WriteLine(line);
-					line = sr.ReadLine();
+					Console.WriteLine("Word is {0}", word);
+					if (returnDictionary.ContainsKey(word.ToLower()))
+					{
+						returnDictionary[word.ToLower()]++;
+					}
+					else
+					{
+						returnDictionary[word.ToLower()] = 1;
+					}
 				}
-				sr.Close();
-				Console.ReadLine();
 
 				foreach (KeyValuePair<string, int> wordCounts in returnDictionary.OrderBy(x => x.Value))
                 {
